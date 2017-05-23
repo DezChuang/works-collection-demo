@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
+
+@mixin size($width,$height)
+  width: $width
+  height: $height
+
+$container-width: 1000px
+$text-color: #FFF5EE
+$font-size: 15px
+$line-height: 25px
+$letter-spacing: 0.35px
+
+*
+  font-family: 'Noto Sans TC', sans-serif
+
+html,body
+  @include size(100%,100%)
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+
+body
+  background-image: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) ), url(../img/bg-default.jpg) /*Add half-black mask background using linear-gradient*/
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  background-attachment: fixed
+
+#header
+  text-align: center
+  line-height: 1.1
+  color: white
+  margin: 0
+  font-size: 36px
+  font-weight: normal
+  padding: 20px 0
+
+.container
+  box-sizing: border-box
+  display: flex
+  flex-wrap: wrap
+  // justify-content: space-around
+  margin: 0 auto
+  width: $container-width
+
+.stream-item
+  box-sizing: border-box
+  display: inline-block
+  width: 300px
+  margin: 20px 1.66%
+  transition: box-shadow .25s ease-in, filter .5s ease-in
+  &:hover
+    cursor: pointer
+    box-shadow: 5px 5px 20px 2.5px rgba(50, 50, 50, 1)
+    filter: brightness(125%)
+
+  .preview
+    box-sizing: border-box
+    position: relative
+    width: 100%
+    height: 168px
+    img
+      position: relative
+      width: 100%
+      height: 100%
+      transition: opacity .5s ease-out
+
+  .content
+    display: flex
+    box-sizing: border-box
+    background-color: rgba(0, 0, 0, .5)
+    .stream-text
+      box-sizing: border-box
+      width: 275px
+      margin-left: 5px
+      .title
+        font-size: 18px
+      p
+        color: $text-color
+        font-size: $font-size
+        line-height: $line-height
+        letter-spacing: 0.35px
+        margin: 5px
+        white-space: nowrap      /* no newline */
+        overflow: hidden         /* crop text */
+        text-overflow: ellipsis  /* ... */
+
+
