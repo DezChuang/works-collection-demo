@@ -63,9 +63,20 @@ body
     height: 168px
     img
       position: relative
+      z-index: 1
+      opacity: 0
       width: 100%
       height: 100%
       transition: opacity .5s ease-out
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: none
+
 
   .content
     display: flex
