@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
+
+@mixin size($width,$height)
+  width: $width
+  height: $height
+
+$container-width: 75%
+$text-color: #FFF5EE
+$font-size: 15px
+$line-height: 25px
+$letter-spacing: 0.35px
+
+*
+  font-family: 'Noto Sans TC', sans-serif
+
+html,body
+  @include size(100%,100%)
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+  color: lightblue
+
+body
+  background-image: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) ), url(../img/bg-default.jpg)
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  background-attachment: fixed
+
+#header
+  text-align: center
+  line-height: 1.1
+  color: white
+  margin: 0
+  font-size: 36px
+  font-weight: normal
+  padding: 20px 0
+
+hr.divider
+  height: 30px
+  border-style: solid
+  border-color: #8c8b8b
+  border-width: 2px 0 0 0
+  border-radius: 20px
+  &:before
+    display: block
+    content: ""
+    height: 30px
+    margin-top: -31px
+    border-style: solid
+    border-color: #8c8b8b
+    border-width: 0 0 2px 0
+    border-radius: 20px
+
+.container
+  box-sizing: border-box
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  margin: 0 auto
+  width: $container-width
+  .breadcrumb
+    padding: 0 15px
+    margin-bottom: 20px
+    list-style: none
+    background-color: rgba(0, 0, 0, .5)
+    color: white
+    border-radius: 4px
+    width: 100%
+  .banner
+    width: 100%
+    height: 250px
+    margin-bottom: 20px
+    background-image: url(../img/deztw.png)
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+  .content
+    box-sizing: border-box
+    background-color: rgba(0, 0, 0, .5)
+    width: 100%
+    margin-bottom: 20px
+    ul > li
+      color: white
+
+  #goback
+    padding: 8px 15px
+    margin-bottom: 20px
+    list-style: none
+    background-color: rgba(0, 0, 0, .5)
+    color: white
+    border-radius: 4px
+
